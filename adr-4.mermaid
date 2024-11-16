@@ -1,0 +1,20 @@
+C4Context
+  Enterprise_Boundary(b0,) {
+    Person(analyst, "Кредитный аналитик", "Пользователь системы для анализа кредитного риска.")
+    Person(customer, "Клиент", "Подает заявку на кредит.")
+
+    System(creditRiskSystem, "Система управления кредитным риском", "Проводит анализ кредитоспособности клиентов.")
+
+    Enterprise_Boundary(b1, "Внутренние системы банка") {
+      System(bankingSystem, "Банковская система", "Обрабатывает заявки клиентов и предоставляет внутренние данные.")
+    }
+
+    System_Ext(apiService, "Внешние сервисы данных", "Предоставляют внешние данные для оценки риска.")
+  }
+
+  Rel(customer, bankingSystem, "Отправляет заявку на кредит")
+  Rel(creditRiskSystem, analyst, "Предоставляет результаты анализа")
+  Rel(creditRiskSystem, apiService, "Запрашивает внешние данные")
+  Rel(creditRiskSystem, bankingSystem, "Отправляет результаты анализа")
+
+  UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")

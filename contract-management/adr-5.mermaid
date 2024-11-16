@@ -1,0 +1,32 @@
+C4Context
+    Enterprise_Boundary(b0,) {
+        Person(client, "Клиент банка", "Клиент, который подписывает и управляет договорами")
+        Person(banker, "Сотрудник банка", "Сотрудник, который подготавливает и проверяет договоры")
+        
+        System(contractSystem, "Система управления цифровыми договорами", "Обрабатывает создание, подписание и хранение договоров")
+        
+        System_Ext(authSystem, "Сервис аутентификации", "Обеспечивает аутентификацию и авторизацию пользователей")
+        SystemDb(contractDb, "База данных договоров", "Хранит данные договоров и истории версий")
+        
+        Enterprise_Boundary(b1, "Внутренние системы банка") {
+            System(existingSystem, "Основная банковская система", "Взаимодействует с договорами для операций, связанных с аккаунтами")
+            System(emailService, "Сервис уведомлений по электронной почте", "Обрабатывает уведомления о статусе договоров")
+        }
+    }
+    
+    Rel(client, contractSystem, "Использует", "HTTPS")
+    Rel(banker, contractSystem, "Управляет и проверяет", "HTTPS")
+    Rel(contractSystem, contractDb, "Хранит и извлекает договоры")
+    Rel(contractSystem, authSystem, "Аутентифицирует пользователей", "OAuth2")
+    Rel(contractSystem, existingSystem, "Обменивается данными и обновлениями")
+    Rel(contractSystem, emailService, "Отправляет уведомления о статусе", "SMTP")
+    
+    UpdateElementStyle(client, $fontColor="black", $bgColor="lightgray", $borderColor="black")
+    UpdateElementStyle(banker, $fontColor="black", $bgColor="lightgray", $borderColor="black")
+    UpdateElementStyle(contractSystem, $bgColor="lightblue")
+    UpdateElementStyle(contractDb, $bgColor="lightyellow")
+    UpdateElementStyle(authSystem, $bgColor="lightgreen")
+    UpdateElementStyle(existingSystem, $bgColor="lightgray")
+    UpdateElementStyle(emailService, $bgColor="lightpink")
+    
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")

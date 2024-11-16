@@ -1,0 +1,69 @@
+title: ADR
+language: null
+supportedLanguages: []
+link:
+  name: gx-adr-template
+  pathname: gitlab.ics-it.ru/dr/gx-adr-template/master/-/aml/adr-3
+  logo: null
+  title: ADR
+  query: {}
+  group: null
+  code: ADR
+  style: purple-blue
+  description: Шаблон для учёта ADR в компании
+  order: 999999
+  isCloning: false
+relatedLinks: []
+contactEmail: null
+tabsTags: null
+name: gx-adr-template
+readOnly: false
+properties:
+  - name: Статус
+    type: Enum
+    style: blue
+    icon: activity
+    values:
+      - Предложено
+      - На рассмотрении
+      - Принято
+      - Отклонено
+      - Устарело
+  - name: Дата
+    type: Numeric
+    style: black
+    icon: calendar
+  - name: Участники
+    type: Enum
+    style: red-green
+    icon: users
+    values:
+      - Иванов Ф.В.
+      - Фролов А.А.
+      - Попов Н.В.
+  - name: Консультанты
+    type: Enum
+    style: dark-orange
+    icon: users-round
+    values:
+      - Белякова М.Н.
+      - Терентьев С.Д.
+      - Молчанов М.О.
+  - name: Подсистема
+    type: Enum
+    style: purple-blue
+    icon: app-window
+    values:
+      - Документация
+      - AML
+      - СУКР
+      - УД
+repositoryName: gx-adr-template
+sourceName: gitlab.ics-it.ru
+userInfo:
+  mail: alexander.machulin@ics-it.ru
+  name: Alexandr Machulin
+  id: alexander.machulin@ics-it.ru
+code: ADR
+description: Шаблон для учёта ADR в компании
+style: purple-blue
