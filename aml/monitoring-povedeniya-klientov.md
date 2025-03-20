@@ -5,6 +5,12 @@ properties:
   - name: Статус
     value:
       - Принято
+  - name: Участники
+    value:
+      - Фролов А.А.
+  - name: Консультанты
+    value:
+      - Белякова М.Н.
   - name: Подсистема
     value:
       - AML

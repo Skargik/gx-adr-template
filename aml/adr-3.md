@@ -5,6 +5,12 @@ properties:
   - name: Статус
     value:
       - На рассмотрении
+  - name: Участники
+    value:
+      - Попов Н.В.
+  - name: Консультанты
+    value:
+      - Белякова М.Н.
   - name: Подсистема
     value:
       - AML

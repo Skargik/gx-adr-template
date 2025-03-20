@@ -1,5 +1,4 @@
 title: ADR
-language: null
 supportedLanguages: []
 link:
   name: gx-adr-template
@@ -14,10 +13,7 @@ link:
   order: 999999
   isCloning: false
 relatedLinks: []
-contactEmail: null
-tabsTags: null
 name: gx-adr-template
-readOnly: false
 properties:
   - name: Статус
     type: Enum
@@ -29,26 +25,6 @@ properties:
       - Принято
       - Отклонено
       - Устарело
-  - name: Дата
-    type: Numeric
-    style: black
-    icon: calendar
-  - name: Участники
-    type: Enum
-    style: red-green
-    icon: users
-    values:
-      - Иванов Ф.В.
-      - Фролов А.А.
-      - Попов Н.В.
-  - name: Консультанты
-    type: Enum
-    style: dark-orange
-    icon: users-round
-    values:
-      - Белякова М.Н.
-      - Терентьев С.Д.
-      - Молчанов М.О.
   - name: Подсистема
     type: Enum
     style: purple-blue
@@ -58,6 +34,26 @@ properties:
       - AML
       - СУКР
       - УД
+  - name: Дата
+    type: Numeric
+    style: black
+    icon: calendar
+  - name: Участники
+    type: Many
+    style: red-green
+    icon: users
+    values:
+      - Иванов Ф.В.
+      - Фролов А.А.
+      - Попов Н.В.
+  - name: Консультанты
+    type: Many
+    style: blue-green
+    icon: user-check
+    values:
+      - Белякова М.Н.
+      - Терентьев С.Д.
+      - Молчанов М.О.
 repositoryName: gx-adr-template
 sourceName: gitlab.ics-it.ru
 userInfo:
